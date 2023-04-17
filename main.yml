@@ -43,9 +43,16 @@
     - import_tasks: tasks/extra-packages.yml
       tags: ['extra-packages']
 
-    - import_tasks: tasks/sublime-text.yml
-      when: configure_sublime
-      tags: ['sublime-text']
+    - name: Add zsh config sourcing to .zshrc
+      tags: ['zsh']
+      lineinfile:
+        path: ~/.zshrc
+        line: "source ~/.zsh.conf"
+        state: present
+
+    - import_tasks: tasks/post-install-omz.yml
+      when: configure_ohmyzsh
+      tags: ['zsh']
 
     - name: Run post-provision task files in a block.
       tags: ['post']

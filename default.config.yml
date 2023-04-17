@@ -3,6 +3,7 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_osx: true
+configure_ohmyzsh: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -144,23 +145,32 @@ pip_packages: []
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
 
-# Set to 'true' to configure Sublime Text.
-configure_sublime: false
-sublime_base_path: '~/Library/Application Support/Sublime Text'
-sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
-
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# oh-my-zsh configs
+oh_my_zsh_update_mode: disabled
+oh_my_zsh_update_frequency: 1
+oh_my_zsh_theme: robbyrussell
+oh_my_zsh_plugins:
+  - 1password
+  - ansible
+  - git
+  - docker
+  - docker-compose
+  - gh
+  - fzf
+  - aws
+  - iterm2
+  - macos
+  - python
+  - pyenv
+  - poetry
+  - npm
+  - nvm
+  - node
+  - tmux
+  - vscode
+  - terraform
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
