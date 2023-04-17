@@ -5,75 +5,120 @@ configure_dotfiles: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+configure_dock: true
+dockitems_remove:
+ - Launchpad
+ - TV
+ - Podcasts
+ - 'App Store'
+ - Siri
+ - Safari
+ - Mail
+ - Contacts
+ - Calendar
+ - Notes
+ - Reminders
+ - Maps
+ - Photos
+ - Messages
+ - FaceTime
+ - Pages
+ - Numbers
+ - Keynote
+ - Music
+ - Books
+ - 'System Settings'
+dockitems_persist:
+- name: "Microsoft Outlook"
+  path: "/Applications/Microsoft Outlook.app/"
+  pos: 2
+- name: "Spotify"
+  path: "/Applications/Spotify.app/"
+  pos: 3
+- name: "Slack"
+  path: "/Applications/Slack.app/"
+  pos: 4
+- name: "1Password"
+  path: "/Applications/1Password.app/"
+  pos: 5
+- name: "Visual Studio Code - Insiders"
+  path: "/Applications/Visual Studio Code - Insiders.app/"
+  pos: 6
+- name: "iTerm"
+  path: "/Applications/iTerm.app/"
+  pos: 7
+- name: "Microsoft Edge Dev"
+  path: "/Applications/Microsoft Edge Dev.app/"
+  pos: 8
 
+dotfiles_repo: git@github.com:FinThunderstorm/pistetiedostot.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Configurations/pistetiedostot
 dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
+  - .zsh.conf
+  - .gitconfig
+  - .gitignore_global
+  - .tmux.conf
   - .osx
-  - .vimrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - awscli
+  - colima
+  - docker
+  - docker-buildx
+  - docker-compose
+  - exa
+  - ffmpeg
+  - fzf
   - git
   - github/gh/gh
-  - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
+  - jq
+  - nano
   - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
-  - zsh-history-substring-search
+  - mas
+  - pyenv
+  - starship
+  - terraform
+  - tmux
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
+  - 1password-beta
+  - 1password-cli-beta
+  - adobe-acrobat-reader
+  - aerial
+  - alfred
+  - coconutbattery
+  - cyberduck
+  - firefox-developer-edition
+  - font-comic-mono
+  - font-hack-nerd-font
+  - gimp-dev
+  - insomnia
+  - intel-power-gadget
+  - iterm2-beta
+  - maccy
+  - microsoft-edge-dev
+  - microsoft-teams
+  - rectangle
+  - slack-beta
+  - sourcetree
+  - spotify
+  - tunnelblick
+  - visual-studio-code-insiders
+  - zoom
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 411643860, name: "DaisyDisk (4.24)" }
+  - { id: 360593530, name: "Notability (12.1.2)" }
+# affinityt
 mas_email: ""
 mas_password: ""
 
