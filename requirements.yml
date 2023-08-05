@@ -3,6 +3,7 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: gantsign.oh-my-zsh
+  - name: gantsign.sdkman
 
 collections:
   - name: geerlingguy.mac

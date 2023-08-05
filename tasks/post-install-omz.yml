@@ -13,3 +13,21 @@
     clone: yes
     update: yes
 
+- name: Install fzf
+  command: "{{ homebrew_prefix }}/opt/fzf/install --key-bindings --completion --no-update-rc"
+
+- name: Download iTerm2 colors
+  git:
+    repo: https://github.com/evrowe/panda-syntax-iterm.git
+    dest: ~/Configurations/misc/panda-syntax-iterm
+    clone: yes
+    update: yes
+
+- name: Install iTerm2 colors
+  command: open ~/Configurations/misc/panda-syntax-iterm/panda-syntax.itermcolors
+
+- name: Create Docker CLI-plugins folder
+  command: mkdir -p ~/.docker/cli-plugins
+
+- name: Symlink Docker Buildx
+  command: ln -sfn {{ homebrew_prefix }}/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx

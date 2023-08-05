@@ -1,6 +1,8 @@
 ---
 downloads: ~/.ansible-downloads/
 
+hostname: "{{ ansible_hostname }}"
+
 configure_dotfiles: true
 configure_osx: true
 configure_ohmyzsh: true
@@ -8,76 +10,85 @@ configure_ohmyzsh: true
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
 dockitems_remove:
- - Launchpad
- - TV
- - Podcasts
- - 'App Store'
- - Siri
- - Safari
- - Mail
- - Contacts
- - Calendar
- - Notes
- - Reminders
- - Maps
- - Photos
- - Messages
- - FaceTime
- - Pages
- - Numbers
- - Keynote
- - Music
- - Books
- - 'System Settings'
+  - Launchpad
+  - TV
+  - Podcasts
+  - "App Store"
+  - Siri
+  - Safari
+  - Mail
+  - Contacts
+  - Calendar
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - Pages
+  - Numbers
+  - Keynote
+  - Music
+  - Books
+  - "System Settings"
+  - Downloads
 dockitems_persist:
-- name: "Microsoft Outlook"
-  path: "/Applications/Microsoft Outlook.app/"
-  pos: 2
-- name: "Spotify"
-  path: "/Applications/Spotify.app/"
-  pos: 3
-- name: "Slack"
-  path: "/Applications/Slack.app/"
-  pos: 4
-- name: "1Password"
-  path: "/Applications/1Password.app/"
-  pos: 5
-- name: "Visual Studio Code - Insiders"
-  path: "/Applications/Visual Studio Code - Insiders.app/"
-  pos: 6
-- name: "iTerm"
-  path: "/Applications/iTerm.app/"
-  pos: 7
-- name: "Microsoft Edge Dev"
-  path: "/Applications/Microsoft Edge Dev.app/"
-  pos: 8
+  - name: "Microsoft Outlook"
+    path: "/Applications/Microsoft Outlook.app/"
+    pos: 2
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+    pos: 3
+  - name: "Slack"
+    path: "/Applications/Slack.app/"
+    pos: 4
+  - name: "1Password"
+    path: "/Applications/1Password.app/"
+    pos: 5
+  - name: "Visual Studio Code - Insiders"
+    path: "/Applications/Visual Studio Code - Insiders.app/"
+    pos: 6
+  - name: "iTerm"
+    path: "/Applications/iTerm.app/"
+    pos: 7
+  - name: "Microsoft Edge Dev"
+    path: "/Applications/Microsoft Edge Dev.app/"
+    pos: 8
 
-dotfiles_repo: git@github.com:FinThunderstorm/pistetiedostot.git
+dotfiles_repo: https://github.com/FinThunderstorm/pistetiedostot.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Configurations/pistetiedostot
 dotfiles_files:
   - .zsh.conf
+  - .zprofile
   - .gitconfig
   - .gitignore_global
   - .tmux.conf
   - .osx
+  - .vimrc
 
 homebrew_installed_packages:
+  - azure-cli
   - awscli
   - colima
   - docker
   - docker-buildx
   - docker-compose
+  - dotnet
   - exa
   - ffmpeg
   - fzf
   - git
   - github/gh/gh
+  - go
+  - haskell-stack
   - jq
   - nano
   - nvm
   - mas
+  - poetry
   - pyenv
+  - rust
   - starship
   - terraform
   - tmux
@@ -174,3 +185,11 @@ oh_my_zsh_plugins:
   - terraform
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+
+configure_sdkman: true
+sdkman_update: true
+sdkman_install_packages:
+  - { candidate: java, version: 17.0.7-ms }
+  - { candidate: gradle, version: 8.1.1 }
+  - { candidate: kotlin, version: 1.8.20 }
+  - { candidate: scala, version: 3.2.2 }
